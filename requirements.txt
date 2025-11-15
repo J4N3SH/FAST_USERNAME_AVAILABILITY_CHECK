@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+redis
+redisbloom
+faker
+pytest
+jinja2
+python-multipart
+requests

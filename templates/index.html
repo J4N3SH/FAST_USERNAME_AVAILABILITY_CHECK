@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Username Availability UI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .container { max-width: 500px; margin: auto; }
+    input[type=text] { width: 100%; padding: 8px; margin: 8px 0; }
+    button { padding: 8px 16px; margin-right: 8px; }
+    .message { margin-top: 20px; padding: 10px; border: 1px solid #ddd; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Check Username</h2>
+    <form action="/check" method="post">
+      <input type="text" name="username" placeholder="Enter username" value="{{ last }}" required>
+      <button type="submit">Check</button>
+    </form>
+
+    <h2>Register Username</h2>
+    <form action="/register_from_ui" method="post">
+      <input type="text" name="username" placeholder="Enter username to register" required>
+      <button type="submit">Register</button>
+    </form>
+
+    {% if message %}
+    <div class="message">
+      {{ message }}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
